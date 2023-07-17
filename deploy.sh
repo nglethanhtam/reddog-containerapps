@@ -11,7 +11,7 @@ az account set --subscription $SUB_ID
 az group create -n $RG -l $LOCATION
 
 # Deploy all infrastructure and reddog apps
-az deployment group create -n nltt-reddog -g $RG -f ./deploy/bicep/main.bicep
+az deployment group create -n reddog -g $RG -f ./deploy/bicep/main.bicep
 
 # Show outputs for bicep deployment
-az deployment group show -n nltt-reddog -g $RG -o json --query properties.outputs.urls.value
+az deployment group show -n reddog -g $RG -o json --query properties.outputs.urls.value
